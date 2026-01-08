@@ -1,0 +1,148 @@
+.partners-container {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* --- Hero Section --- */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 450px; /* Increased height for the extra text */
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 50px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Darkens image for text readability */
+  background: rgba(0, 0, 0, 0.5);
+
+  /* Centering Logic */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertical center */
+  align-items: center;     /* Horizontal center */
+  text-align: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.hero-overlay h1 {
+  font-size: 3.5rem;
+  margin: 0 0 15px 0;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.hero-overlay h2 {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 700px; /* Prevents text from stretching too wide */
+  line-height: 1.6;
+  font-weight: 400;
+  margin: 0;
+}
+
+/* --- Partners Grid --- */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.partner-card {
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.partner-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.logo-container img {
+  max-width: 180px;
+  max-height: 80px;
+  filter: grayscale(20%); /* Subtle professional touch */
+}
+
+.partner-card:hover .logo-container img {
+  filter: grayscale(0%);
+}
+
+/* --- Sponsorship Tiers --- */
+.tier-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 5px 15px;
+  border-radius: 50px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.platinum { border-top: 6px solid #B4B4B4; }
+.platinum .tier-badge { background: #E5E4E2; color: #444; }
+
+.gold { border-top: 6px solid #FFD700; }
+.gold .tier-badge { background: #FFF4B0; color: #8A6D3B; }
+
+.silver { border-top: 6px solid #C0C0C0; }
+.silver .tier-badge { background: #E8E8E8; color: #666; }
+
+.bronze { border-top: 6px solid #CD7F32; }
+.bronze .tier-badge { background: #F5E6D7; color: #8B4513; }
+
+/* --- Visit Link --- */
+.visit-link {
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  border: 2px solid #333;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.visit-link:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-overlay h1 { font-size: 2.2rem; }
+  .hero-overlay h2 { font-size: 1rem; }
+  .hero-section { height: 350px; }
+}

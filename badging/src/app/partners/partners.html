@@ -1,0 +1,27 @@
+<section class="partners-container">
+  <div class="hero-section">
+    <img [src]="heroPartners" alt="Conference Banner" class="hero-image">
+    <div class="hero-overlay">
+      <h1>Our Partners</h1>
+      <h2> You can achieve a very impressive effect by using our animated navbar, which is transparent on start, and change the color after the scroll.</h2>
+    </div>
+  </div>
+
+  <div class="partners-grid">
+    @for (partner of partners; track partner.company) {
+      <div class="partner-card" [ngClass]="partner.sponsorship.toLowerCase()">
+        <div class="tier-badge">{{ partner.sponsorship }} Partner</div>
+
+        <div class="logo-container">
+          <img [src]="partner.logo" [alt]="partner.company + ' logo'">
+        </div>
+
+        <h3>{{ partner.company }}</h3>
+
+        <a [href]="partner.website" target="_blank" class="visit-link">
+          Visit Website
+        </a>
+      </div>
+    }
+  </div>
+</section>

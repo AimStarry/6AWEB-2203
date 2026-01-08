@@ -1,0 +1,58 @@
+<header class="hero" [style.backgroundImage]="'linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(' + heroImageUrl + ')'">
+  <div class="hero-content">
+    <h1>{{ heroText1 }}</h1>
+    <p>{{ heroText2 }}</p>
+  </div>
+</header>
+
+<main class="container">
+  <h2 class="section-title">{{ text1 }}</h2>
+
+  <div class="cards-grid">
+
+    <div class="card">
+      <div class="card-image">
+        <img [src]="place1img" [alt]="place1">
+        <span class="badge">{{ place1topic }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ place1 }}</h3>
+        <p>{{ place1desc }}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img [src]="place2img" [alt]="place2">
+        <span class="badge">{{ place2topic }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ place2 }}</h3>
+        <p>{{ place2desc }}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img [src]="place3img" [alt]="place3">
+        <span class="badge">{{ place3topic }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ place3 }}</h3>
+        <p>{{ place3desc }}</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-image">
+        <img [src]="place4img" [alt]="place4">
+        <span class="badge">{{ place4topic }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ place4 }}</h3>
+        <p>{{ place4desc }}</p>
+      </div>
+    </div>
+
+  </div>
+</main>
