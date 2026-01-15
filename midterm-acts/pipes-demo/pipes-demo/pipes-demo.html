@@ -1,0 +1,61 @@
+<p>Pangan, Aimee Li Marael S.</p>
+<div>
+  <h3>Parameter in Date</h3>
+   Today's date :- {{presentDate | date}} <br/>
+   This is a short date :- {{presentDate | date:'shortDate'}}<br/>
+   This line shows the full date :- {{presentDate | date:'fullDate'}}<br/>
+   This will show a formatted date:- {{presentDate | date:'M/dd/yyyy'}}<br/>
+   This indicates the hours and minutes:- {{presentDate | date:'h:mm'}}
+</div>
+
+<div>
+  <h3>Chained Pipe</h3>
+  Date with uppercase :- {{presentDate | date:'fullDate' | uppercase}}<br/>
+  Date with lowercase :- {{presentDate | date:'medium' | lowercase}}<br/>
+</div>
+<div>
+  <h3>AsynchPipe</h3>
+   Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}
+</div>
+
+<div>
+  <h3>CurrencyPipe</h3>
+   <p>{{price | currency: '' :true}}</p>
+   <p>{{price | currency: 'INR'}}</p>
+</div>
+
+<div>
+  <h3>SlicePipe</h3>
+   <p>Start index:- {{Fruits | slice:2}}</p>
+   <p>Start and end index:- {{Fruits | slice:1:4}}</p>
+   <p>Negative index:- {{Fruits | slice:-2}}</p>
+   <p>Negative start and end index:- {{Fruits | slice:-4:-2}}</p>
+</div>
+
+<div style="text-align:center">
+  <h3>DecimalPipe</h3>
+  <p>Apply formatting:- {{decimalNum1 | number:'1.3'}}</p>
+  <p>Apply formatting:- {{decimalNum2 | number: '1.1-4'}}</p>
+</div>
+
+<div style="text-align:center">
+  <h3>PercentPipe</h3>
+  <p>Standard Percentage:- {{0.8542 | percent}}</p>
+  <p>Formatted Percentage:- {{statsRatio | percent:'1.1-2'}}</p>
+</div>
+
+<div>
+  <h3>JsonPipe</h3>
+  <p>Object converted to JSON string (Useful for debugging):</p>
+  <pre>{{jsonData | json}}</pre>
+</div>
+
+<div>
+  <h3>KeyValuePipe</h3>
+  <p>Iterating through an Object:</p>
+  <ul>
+    @for (item of studentInfo | keyvalue; track item.key) {
+      <li><strong>{{item.key}}</strong>: {{item.value}}</li>
+    }
+  </ul>
+</div>
