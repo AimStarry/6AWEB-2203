@@ -1,0 +1,8 @@
+.contact-layout { display: flex; gap: 40px; }
+.form-side { flex: 1; }
+.preview-side { flex: 1; }
+.field { margin-bottom: 15px; }
+.field label { display: block; margin-bottom: 5px; }
+.field input { width: 100%; padding: 10px; }
+.btn-submit { background: #007bff; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+.preview-box { padding: 15px; background: #f4f4f4; border: 1px dashed #ccc; min-height: 100px; }

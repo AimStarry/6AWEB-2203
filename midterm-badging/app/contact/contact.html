@@ -1,0 +1,19 @@
+<h2>Contact Support</h2>
+
+<div class="contact-layout">
+  <div class="form-side">
+    <div class="field">
+      <label>Full Name</label>
+      <input type="text" [(ngModel)]="userName" placeholder="John Doe" />
+    </div>
+    <button class="btn-submit">Submit Request</button>
+  </div>
+
+  <div class="preview-side">
+    <h4>Form Preview</h4>
+    <div class="preview-box">
+      <p><strong>Name to be Sent:</strong> {{ userName | uppercase }}</p>
+      <p><strong>Status:</strong> Draft</p>
+    </div>
+  </div>
+</div>

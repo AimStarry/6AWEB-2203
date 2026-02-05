@@ -1,0 +1,13 @@
+<section class="welcome">
+  <h1>Welcome to the Help Desk Portal</h1>
+  <p>Your one-stop shop for community updates and service requests.</p>
+</section>
+
+<hr />
+
+<h3>Latest Updates</h3>
+<div class="update-list">
+  <div *ngFor="let post of latestPosts$ | async" class="update-item">
+    <h4>{{ post.title | uppercase }}</h4>
+  </div>
+</div>

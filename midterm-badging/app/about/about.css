@@ -1,0 +1,7 @@
+.heading { color: #333; }
+.status-box {
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #eefbff;
+  border-radius: 8px;
+}
