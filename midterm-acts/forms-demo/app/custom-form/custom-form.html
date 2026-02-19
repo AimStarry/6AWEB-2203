@@ -1,0 +1,38 @@
+<div class="form-container">
+  <h2>New Project Intake</h2>
+
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label>Project Name</label>
+      <input formControlName="projectName" placeholder="e.g. School Portal">
+      <small *ngIf="projectForm.get('projectName')?.touched && projectForm.get('projectName')?.invalid" class="error">
+        Name is required (min 5 characters).
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Client Email</label>
+      <input type="email" formControlName="clientEmail" placeholder="client@company.com">
+      <small *ngIf="projectForm.get('clientEmail')?.touched && projectForm.get('clientEmail')?.invalid" class="error">
+        Please enter a valid email.
+      </small>
+    </div>
+
+    <div class="form-group">
+      <label>Project Type</label>
+      <select formControlName="projectType">
+        <option value="development">Software Development</option>
+        <option value="design">UI/UX Design</option>
+        <option value="consulting">Consulting</option>
+      </select>
+    </div>
+
+    <div class="form-group checkbox">
+      <input type="checkbox" formControlName="agreeTerms">
+      <span>I agree to the service terms</span>
+    </div>
+
+    <button type="submit" [disabled]="projectForm.invalid">Submit Request</button>
+  </form>
+</div>

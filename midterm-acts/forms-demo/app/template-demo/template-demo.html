@@ -1,0 +1,35 @@
+<form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <h2>Template Demo</h2>
+
+  <input class="input-box" type="text" name="username" [(ngModel)]="username" placeholder="Enter username" required>
+  <input class="input-box" type="email" name="email" [(ngModel)]="email" placeholder="Enter email" required email>
+  <input class="input-box" type="password" name="password" [(ngModel)]="password" placeholder="Enter password" required minlength="6">
+
+  <select class="input-box" name="role" [(ngModel)]="role" required>
+    <option value="" disabled selected>Select role</option>
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+    <option value="guest">Guest</option>
+  </select>
+
+  <div class="radio-group">
+    <label>Gender:</label>
+    <label><input type="radio" name="gender" value="male" [(ngModel)]="gender" required> Male</label>
+    <label><input type="radio" name="gender" value="female" [(ngModel)]="gender" required> Female</label>
+  </div>
+
+  <div class="checkbox-group">
+    <label>
+      <input type="checkbox" name="isPermanent" [(ngModel)]="isPermanent">
+      Permanent Employee? (Unchecked = Probationary)
+    </label>
+  </div>
+
+  <textarea class="input-box" name="comments" [(ngModel)]="comments" placeholder="Add your notes here..." rows="3"></textarea>
+
+  <input class="btn" type="submit" value="Submit" [disabled]="!myForm.valid">
+
+  <div *ngIf="submitted" class="success-msg">
+    Form submitted successfully!
+  </div>
+</form>

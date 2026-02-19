@@ -1,0 +1,68 @@
+/* Label styling */
+.mini-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+/* Minimalist Inputs: No side/top borders, only bottom */
+.minimalist-input {
+  border: none;
+  border-bottom: 1.5px solid #dee2e6;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.minimalist-input:focus {
+  box-shadow: none;
+  border-color: #0d6efd;
+  background-color: #fafafa;
+}
+
+/* Validation State */
+.minimalist-input.is-invalid {
+  border-bottom-color: #dc3545;
+}
+
+/* Select arrows and spacing */
+select.minimalist-input {
+  padding-left: 0;
+}
+
+/* Radio button color */
+.form-check-input:checked {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+/* Hover effect for the pill button */
+.btn-primary.rounded-pill {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary.rounded-pill:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.2);
+}
+
+.invalid-feedback {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+}
+
+.extra-small {
+  font-size: 0.7rem;
+  letter-spacing: 0.5px;
+}
+
+/* Ensure minimalist inputs show the red border correctly */
+.minimalist-input.is-invalid {
+  border-bottom-color: #dc3545 !important;
+}
