@@ -1,0 +1,101 @@
+<div class="main-wrapper">
+  <mat-card class="form-container">
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon color="primary">account_circle</mat-icon> User Registration
+      </mat-card-title>
+    </mat-card-header>
+
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Enter username" formControlName="userName">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput type="email" placeholder="example@mail.com" formControlName="email">
+          <mat-icon matSuffix>email</mat-icon>
+          @if (formdata.get('email')?.invalid && formdata.get('email')?.touched) {
+            <mat-error>Please enter a valid email address</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Min 8 characters" formControlName="password">
+          <mat-icon matSuffix>lock</mat-icon>
+          @if (formdata.get('password')?.hasError('minlength')) {
+            <mat-error>Password must be at least 8 characters</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Preferred Notification</mat-label>
+          <mat-select formControlName="notification">
+            @for (note of notifications; track note.value) {
+              <mat-option [value]="note.value">{{note.viewValue}}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+
+        <div class="field-group">
+          <label class="group-label">Gender:</label>
+          <mat-radio-group formControlName="gender" class="radio-row">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="other">Other</mat-radio-button>
+          </mat-radio-group>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Birth Date</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="birthDate">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Address</mat-label>
+          <textarea matInput placeholder="Enter your address" formControlName="address"></textarea>
+        </mat-form-field>
+
+        <div class="field-group">
+          <label class="group-label">Angular Skill Level: <strong>{{formdata.get('angularSkillLevel')?.value}}</strong></label>
+          <mat-slider [min]="minSkillLevel" [max]="maxSkillLevel" step="1" discrete showTickMarks>
+            <input matSliderThumb formControlName="angularSkillLevel">
+          </mat-slider>
+        </div>
+
+        <mat-checkbox formControlName="agree" color="primary" class="terms-check">
+          I accept the terms and conditions
+        </mat-checkbox>
+
+        <div class="button-row">
+          <button mat-raised-button color="primary" type="submit" [disabled]="formdata.invalid">
+            <mat-icon>send</mat-icon> Register
+          </button>
+        </div>
+      </form>
+    </mat-card-content>
+
+    @if (submitted) {
+      <mat-divider></mat-divider>
+      <mat-card-footer class="result-display">
+        <h3><mat-icon color="accent">task_alt</mat-icon> Registration Summary</h3>
+        <ul>
+          <li><strong>Username:</strong> {{userName}}</li>
+          <li><strong>Email:</strong> {{email}}</li>
+          <li><strong>Method:</strong> {{notification}}</li>
+          <li><strong>Skill Level:</strong> {{angularSkillLevel}}</li>
+        </ul>
+      </mat-card-footer>
+    }
+  </mat-card>
+</div>
